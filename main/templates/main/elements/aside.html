@@ -1,0 +1,16 @@
+<aside>
+    <ul>
+        <a href="{% url 'about' %}">
+        <li class="{% if string == 'about' %}active-aside{% endif %}">О сервисе</li></a>
+        <a href="{% url 'delivery' %}">
+        <li class="{% if string == 'delivery' %}active-aside{% endif %}">Доставка и оплата</li></a>
+        <a href="{% url 'trade-in' %}">
+        <li class="{% if string == 'tradein' %}active-aside{% endif %}">Трейд-ин</li></a>
+        <a href="{% url 'warranty' %}">
+        <li class="{% if string == 'warranty' %}active-aside{% endif %}">Гарантии</li></a>
+        <a href="{% url 'privacy' %}">
+        <li class="{% if string == 'privacy' %}active-aside{% endif %}">О конфиденциальности</li></a>
+        <a href="{% url 'details' %}">
+        <li class="{% if string == 'details' %}active-aside{% endif %}">Реквизиты</li></a>
+    </ul>
+</aside>

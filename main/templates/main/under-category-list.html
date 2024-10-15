@@ -1,0 +1,31 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}{{ under_category.name }}{% endblock title %}
+{% block content %}
+    {% include 'main/elements/header_desktop.html' %}
+    <main>
+        {% include 'main/elements/header_mobile.html' %}
+        <section class="products-section" id="products">
+            <div class="body-container">
+                <h1 class="mobile name-category">{{ under_category.name }}</h1>
+                <div class="categories-block">
+                    <form class="category active-category" action="/{{ cur_cat }}/categories/{{ under_category.slug }}/">
+                        <button>{{ under_category.name }}</button>
+                    </form>
+                </div>
+                <div class="products">
+                    {% for product in products %}
+                        {% include 'main/elements/product.html' with product_item=product %}
+                    {% endfor %}
+                </div>
+                {% include 'main/elements/category-block.html' with categories=categories %}
+                {% for product in products %}
+                    {% include 'main/elements/modal-window.html' with product=product %}
+                {% endfor %}
+            </div>
+
+
+        </section>
+    </main>
+    {% include 'main/elements/footer.html' %}
+{% endblock content %}

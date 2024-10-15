@@ -1,0 +1,36 @@
+{% extends 'main/base.html' %}
+{% block title %}Гарантии{% endblock title %}
+{% block content %}
+    {% include 'main/elements/header_desktop.html' %}
+    <main>
+        {% include 'main/elements/header_mobile.html' %}
+        <section class="about-section" id="about">
+
+            <div class="body-container">
+
+                {% include 'main/elements/category-block.html' with categories=categories %}
+                <div class="blocks-home">
+                    <div class="left-block-about">
+                        {% include 'main/elements/aside.html' with string='warranty' %}
+
+                    </div>
+                    <div class="right-block-about">
+                        <h5>Гарантии</h5>
+                        <h1 class="big-header">На все товары идёт гарантия от производителя</h1>
+                        <p>
+                            Сроки гарантийного обслуживания указаны на страницах товаров на сайте и в гарантийном талоне, который мы выдаём покупателю при доставке заказа.
+                            <br /><br />
+                            Кроме того, вы всегда можете рассчитывать на нас: мы поможем обслужить аккумулятор и без лишних вопросов заменим проблемную продукцию.
+                        </p>
+
+                    </div>
+                </div>
+                {% include 'main/elements/category-block.html' with categories=categories %}
+            </div>
+
+        </section>
+    </main>
+    {% include 'main/elements/footer.html' %}
+
+{% endblock content %}
+

@@ -1,0 +1,59 @@
+<div class="modal-overlay" id="{{ product.id }}">
+    <div class="modal-window">
+        <div class="header-modal">
+            <i><h1>ДОСТАВКА АКБ</h1></i>
+            <button onclick="hide_detail_modal('{{ product.id }}')"><ion-icon name="close-outline"></ion-icon></button>
+        </div>
+        <div class="body-modal">
+            <div class="item-modal">
+                <div class="name-item-modal">
+                    <img src="{{ product.image.url }}">
+                    <h1>{{ product.name }}</h1>
+                </div>
+                <div class="prices-item-modal">
+                    <p>СТОИМОСТЬ<br>С ДОСТАВКОЙ</p>
+                    <h3>{{ product.full_price }}₽</h3>
+                    <p>ПРИ СДАЧЕ<br>СТАРОЙ АКБ</p>
+                    <h3>{{ product.tradein_price }}₽</h3>
+                </div>
+            </div>
+            <form method="POST" action="{% url 'thanks' %}">
+                {% csrf_token %}
+                <input style="display : none" name="acum" value="{{ product.name }}">
+                <input placeholder="Ваше имя" name="name" required>
+                <input placeholder="Модель автомобиля" name="car" required>
+                <input placeholder="Номер телефона" name="phone" required>
+                <div class="send-modal">
+                    <div class="left-send-modal">
+                        <p>
+                            Позвоним на номер в течение 10 минут, чтобы подтвердить заказ<br />
+                            Нажимая кнопку "Заказать" вы соглашаетесь с <a href="{% url 'privacy' %}">политикой конфиденциальности</a>
+                        </p>
+                        <div class="social-networks">
+                            <a href="https://t.me/avtoamper23">
+                                <div class="btn-sn">
+                                    <ion-icon name="paper-plane-outline"></ion-icon>
+                                </div>
+                            </a>
+                            <a href="https://wa.me/79667605550">
+                                <div class="btn-sn">
+                                    <ion-icon name="logo-whatsapp"></ion-icon>
+                                </div>
+                            </a>
+
+                            <a href="tel:+79667605550">
+                                <div class="btn-sn">
+                                    <ion-icon name="call-outline"></ion-icon>
+                                </div>
+                            </a>
+
+                        </div>
+                    </div>
+                    <div class="right-send-modal">
+                        <button>заказать</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

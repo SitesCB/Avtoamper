@@ -1,0 +1,74 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}Трейд-ин{% endblock title %}
+{% block content %}
+    {% include 'main/elements/header_desktop.html' %}
+    <main>
+        {% include 'main/elements/header_mobile.html' %}
+        <section class="about-section" id="about">
+
+            <div class="body-container">
+
+                {% include 'main/elements/category-block.html' with categories=categories %}
+                <div class="blocks-home">
+                    <div class="left-block-about">
+                        {% include 'main/elements/aside.html' with string='tradein' %}
+                    </div>
+                    <div class="right-block-about">
+                        <h5>Трейд-ин</h5>
+                        <h1 class="big-header">Вы можете купить новый аккумулятор со скидкой, сдав свой старый.</h1>
+                        <p>
+                            Или просто продать нам старые АКБ. Приедем, заберём в любом объёме и рассчитаемся наличными<br /><br />
+                            Скидка на новую или стоимость выкупа старой АКБ рассчитывается в зависимости от ёмкости сданного аккумулятора:
+                        </p>
+                        <table>
+                            <tr>
+                                <td>от 35 до 45 А·ч</td>
+                                <td>400₽</td>
+                            </tr>
+                            <tr>
+                                <td>50 – 55 А·ч</td>
+                                <td>500₽</td>
+                            </tr>
+                            <tr>
+                                <td>60 – 65 А·ч</td>
+                                <td>600₽</td>
+                            </tr>
+                            <tr>
+                                <td>70 – 75 А·ч</td>
+                                <td>700₽</td>
+                            </tr>
+                            <tr>
+                                <td>90 – 110 А·ч</td>
+                                <td>800₽</td>
+                            </tr>
+                            <tr>
+                                <td>132 – 140 А·ч</td>
+                                <td>1200₽</td>
+                            </tr>
+                            <tr>
+                                <td>190 А·ч</td>
+                                <td>2000₽</td>
+                            </tr>
+                            <tr>
+                                <td>225 А·ч</td>
+                                <td>2500₽</td>
+                            </tr>
+                            <tr>
+                                <td>3СТ-215</td>
+                                <td>1000₽</td>
+                            </tr>
+
+                        </table>
+
+                    </div>
+                </div>
+                {% include 'main/elements/category-block.html' with categories=categories %}
+            </div>
+
+        </section>
+    </main>
+    {% include 'main/elements/footer.html' %}
+
+{% endblock content %}
+

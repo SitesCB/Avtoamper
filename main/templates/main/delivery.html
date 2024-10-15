@@ -1,0 +1,33 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}Доставка и оплата{% endblock title %}
+{% block content %}
+    {% include 'main/elements/header_desktop.html' %}
+    <main>
+        {% include 'main/elements/header_mobile.html' %}
+        <section class="about-section" id="about">
+
+            <div class="body-container">
+
+                {% include 'main/elements/category-block.html' with categories=categories %}
+                <div class="blocks-home">
+                    <div class="left-block-about">
+                        {% include 'main/elements/aside.html' with string='delivery' %}
+
+                    </div>
+                    <div class="right-block-about">
+                        <h5>Доставка и оплата</h5>
+                        <h1 class="big-header">Доставка работает круглосуточно и без выходных по Краснодару и пригороду</h1>
+                        <p>
+                            Если необходимо доставить заказ ещё дальше, то просто напишите населённый пункт в поле адрес и, на всякий случай, уточните при подтверждении заказа по телефону. Возможно, такая доставка займёт немного больше времени, но мы обязательно вас выручим.<br /><br />Оплатить заказ можно наличными курьеру, онлайн–переводом, банковской картой и безналичным расчётом (в этом случае, доставка осуществляется после зачисления средств на наш расчётный счёт).
+                        </p>
+
+                    </div>
+                </div>
+                {% include 'main/elements/category-block.html' with categories=categories %}
+            </div>
+
+        </section>
+    </main>
+    {% include 'main/elements/footer.html' %}
+{% endblock content %}

@@ -1,0 +1,34 @@
+{% extends 'main/base.html' %}
+{% block title %}О сервисе{% endblock title %}
+{% block content %}
+    {% include 'main/elements/header_desktop.html' %}
+    <main>
+        {% include 'main/elements/header_mobile.html' %}
+        <section class="about-section" id="about">
+
+            <div class="body-container">
+
+                {% include 'main/elements/category-block.html' with categories=categories %}
+                <div class="blocks-home">
+                    <div class="left-block-about">
+                        {% include 'main/elements/aside.html' with string='about' %}
+
+                    </div>
+                    <div class="right-block-about">
+                        <h5>О сервисе</h5>
+                        <h1 class="big-header">Мы — сервис срочной доставки и магазин автомобильных аккумуляторов</h1>
+                        <p>Отбросив всё лишнее, мы сделали топовый автомагазин — быстрый, потому что среднее время доставки и установки батареи занимает всего 40 минут, и полезный, потому что выручаем из трудных и непредвиденных ситуаций, ведь доступны не только днём, но и ночью, даже в выходные дни.<br /><br /> И хотя Автоампер — новая компания, первые клиенты оценили удобство сервиса буквально с первых минут его запуска. В свою очередь, мы не скупимся на скидки, советы и помощь.</p>
+                        <form class="form-button" action="{% url 'home' %}#products">
+                            <button>Смотреть ассортимент</button>
+                        </form>
+                    </div>
+                </div>
+                {% include 'main/elements/category-block.html' with categories=categories %}
+            </div>
+
+        </section>
+    </main>
+    {% include 'main/elements/footer.html' %}
+
+{% endblock content %}
+

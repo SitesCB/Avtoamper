@@ -1,0 +1,38 @@
+{% load static %}
+<section class="home-section" id="home">
+    <div class="body-container">
+        <div class="blocks-home">
+            <div class="leftblock-home">
+                <div class="home-text">
+
+                    <a href="{% url 'home' %}"><h1 id="name-company-home" class="mobile"><i>Авто<span style="color: #ff943d ">Ампер</span></i></h1></a>
+
+                </div>
+                <div class="icons-home mobile">
+                    <div class="icon-home">
+                        <span><img src="{% static 'main/img/icons/delivery.svg' %}"></span>
+
+                        <a href="{% url 'delivery' %}">СРЕДНЕЕ ВРЕМЯ ДОСТАВКИ</a>
+                    </div>
+                    <div class="icon-home">
+                        <span><img src="{% static 'main/img/icons/time.svg' %}"></span>
+                        <a href="{% url 'delivery' %}">РАБОТАЕМ КРУГЛОСУТОЧНО</a>
+                    </div>
+
+                    <div class="icon-home">
+                        <span><img src="{% static 'main/img/icons/tradein.svg' %}"></span>
+
+                        <a href="{% url 'trade-in' %}">ПРОДАЁМ В ТРЕЙД-ИН</a>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="rightblock-home mobile">
+                <img src="{% static 'main/img/logo.png' %}">
+            </div>
+
+        </div>
+    </div>
+
+</section>

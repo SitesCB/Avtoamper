@@ -1,0 +1,71 @@
+{% extends 'main/base.html' %}
+{% block title %}Реквизиты{% endblock title %}
+{% block content %}
+    {% include 'main/elements/header_desktop.html' %}
+    <main>
+        {% include 'main/elements/header_mobile.html' %}
+        <section class="about-section" id="about">
+
+            <div class="body-container">
+
+                {% include 'main/elements/category-block.html' with categories=categories %}
+                <div class="blocks-home">
+                    <div class="left-block-about">
+                        {% include 'main/elements/aside.html' with string='details' %}
+
+                    </div>
+                    <div class="right-block-about">
+                        <h5>Реквизиты</h5>
+                        <h1 class="big-header">Автоампер</h1>
+                        <table>
+                            <tr>
+                                <td>Полное наименование</td>
+                                <td>Данильченко Сергей Викторович</td>
+                            </tr>
+                            <tr>
+                                <td>ИНН</td>
+                                <td>110601844311</td>
+                            </tr>
+                            <tr>
+                                <td>ОГРН</td>
+                                <td>322237500051643</td>
+                            </tr>
+                            <tr>
+                                <td>Юридический адрес</td>
+                                <td>350072, Краснодарский край, г. Краснодар, ул. им. Рахманинова С. В., дом № 31</td>
+                            </tr>
+                            <tr>
+                                <td>Телефон, факс</td>
+                                <td>+7 (966) 760-55-50</td>
+                            </tr>
+                            <tr>
+                                <td>Электронная почта</td>
+                                <td>avto.amper@yandex.ru</td>
+                            </tr>
+                            <tr>
+                                <td>Сайт</td>
+                                <td>автоампер.рф</td>
+                            </tr>
+                            <tr>
+                                <td>Банковские реквизиты</td>
+                                <td>
+                                    БИК 040349602
+                                    Р/с №40802810730000105641 ПАО "СБЕРБАНК"
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Кор/счет</td>
+                                <td>30101810100000000602</td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </div>
+                {% include 'main/elements/category-block.html' with categories=categories %}
+            </div>
+
+        </section>
+    </main>
+    {% include 'main/elements/footer.html' %}
+{% endblock content %}
+

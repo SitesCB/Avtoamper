@@ -1,0 +1,131 @@
+{% extends 'main/base.html' %}
+{% block title %}{{ product_item.name }}{% endblock title %}
+{% block content %}
+    {% include 'main/elements/header_desktop.html' %}
+    <main>
+        {% include 'main/elements/header_mobile.html' %}
+        <section class="products-section">
+            <div class="body-container">
+                {% include 'main/elements/category-block.html' with categories=categories %}
+                
+                <div class="item">
+                    <div class="item-bg">
+                        <div class="leftblock-item">
+                            <img src="{{ product_item.image.url }}">
+                        </div>
+                        <div class="rightblock-item">
+                            {% if product_item.inorder %}
+                                <div id="in-order">
+                                    <span><ion-icon name="checkmark-circle-outline"></ion-icon>В наличии</span>
+                                </div>
+                            {% else %}
+                                <div id="not-in-order">
+                                    <span><ion-icon name="warning-outline"></ion-icon>Нет в наличии</span>
+                                </div>
+                            {% endif %}
+                            
+                            <i><h1>{{ product_item.name }}</h1></i>
+                            <table id="description-item">
+                                <tr>
+                                    <td>Ёмкость</td>
+                                    <td>{{ product_item.parameter1 }}А·ч</td>
+                                </tr>
+                                <tr>
+                                    <td>Пусковой ток</td>
+                                    <td>{{ product_item.parameter2 }}А</td>
+                                </tr>
+                                <tr>
+                                    <td>Полярность</td>
+                                    <td>[ {{ product_item.parameter3 }} ]</td>
+                                </tr>
+                                <tr>
+                                    <td>Габариты</td>
+                                    <td>{{ product_item.parameter4 }}мм</td>
+                                </tr>
+                                <tr>
+                                    <td>Производство</td>
+                                    <td>{{ product_item.parameter5 }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Напряжение</td>
+                                    <td>{{ product_item.parameter6 }}В</td>
+                                </tr>
+                                <tr>
+                                    <td>Гарантия</td>
+                                    <td>{{ product_item.parameter7 }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Вес</td>
+                                    <td>{{ product_item.parameter8 }}</td>
+                                </tr>
+                            </table>
+                            <div class="buttons-item-block">
+                                <div class="form" onclick="show_detail_modal('{{ product_item.id }}')">
+                                    <div class="button left left-button">
+                                        <div class="price-card left">
+                                            <p>Купить за</p>
+                                            <h5>{{ product_item.full_price }}₽</h5>
+                                        </div>
+                                    </div>
+                                    <div class="button right right-button" style="justify-content : flex-end">
+                                        <div class="price-card right">
+                                            <p>В трейд-ин</p>
+                                            <h5>{{ product_item.tradein_price }}₽</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h6><ion-icon name="timer-outline"></ion-icon>Бесплатно и быстро доставим по Краснодару и установим</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+        <section class="products-section fromlight-color">
+            <div class="body-container">
+                <i><h1 style="margin-left: 70px; margin-top: -30px; color: rgb(245, 245, 245); font-weight : 600; ">СО СХОЖИМИ ПАРАМЕТРАМИ</h1></i>
+                <div class="products">
+                    {% for product in products %}
+                        {% include 'main/elements/product.html' with product_item=product %}
+                    {% endfor %}
+                </div>
+                <div class="find-acum" style="width : 90%; margin: 50px auto 50px auto">
+                    <h1 style="color : rgb(240, 240, 240); font-weight : 600">Не нашли нужный?</h1>
+                    <div class="blocks-find-acum">
+                        <p style="color: rgb(200, 200, 200) ">
+                            У нас большой склад, скорее всего, мы просто не успели ещё добавить вашу АКБ на сайт.
+                            <br />
+
+                            Напишите нам и мы проверим её наличие
+                        </p>
+                    </div>
+                    <div class="social-networks">
+                        <a href="https://t.me/akbshka">
+                            <div class="btn-sn">
+                                <ion-icon name="paper-plane-outline"></ion-icon>
+                            </div>
+                        </a>
+                        <a href="https://wa.me/79604953838">
+                            <div class="btn-sn">
+                                <ion-icon name="logo-whatsapp"></ion-icon>
+                            </div>
+                        </a>
+
+                        <a href="https://instagram.com/akbshka.ru">
+                            <div class="btn-sn">
+                                <ion-icon name="logo-instagram"></ion-icon>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+                {% include 'main/elements/category-block.html' with categories=categories %}
+                {% include 'main/elements/modal-window.html' with product=product_item %}
+            </div>
+        </section>
+    </main>
+    {% include 'main/elements/footer.html' %}
+{% endblock content %}
+

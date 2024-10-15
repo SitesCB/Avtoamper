@@ -1,0 +1,26 @@
+{% load static %}
+<div class="product">
+    <a class="product-body" href="/{{ product_item.category.slug }}/{{ product_item.slug }}">
+        <img src="{{ product_item.image.url }}">
+
+        <div class="card-info">
+            <div class="name-description-card">
+                <h5>{{ product_item.name }}</h5>
+                <p>{{ product_item.category }}</p>
+            </div>
+
+        </div>
+    </a>
+    <div class="buttons-card" style="width : 100%">
+        <button class="left left-button" onclick="show_detail_modal('{{ product_item.id }}')">
+            <div class="price-card left">
+                <p>Купить за</p>
+                <h5>{{ product_item.full_price }}₽</h5>
+            </div>
+            <div class="price-card right">
+                <p>В трейд-ин</p>
+                <h5>{{ product_item.tradein_price }}₽</h5>
+            </div>
+        </button>
+    </div>
+</div>

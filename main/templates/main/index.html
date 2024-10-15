@@ -1,0 +1,126 @@
+﻿{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}Автоампер{% endblock title %}
+{% block content %}
+    <header class="header">
+        <div class="body-container">
+            <div class="leftside-header">
+                <div class="home-text">
+                    
+                    <a href="{% url 'home' %}"><h1 id="name-company-home"><i>Авто<span style="color: #ff943d ">Ампер</span></i></h1></a>
+                </div>
+                <div class="icons-home">
+                    <div class="icon-home">
+                        <span><img src="{% static 'main/img/icons/delivery.svg' %}"></span>
+
+                        <a href="{% url 'delivery' %}">СРЕДНЕЕ ВРЕМЯ ДОСТАВКИ</a>
+                    </div>
+                    <div class="icon-home">
+                        <span><img src="{% static 'main/img/icons/time.svg' %}"></span>
+                        <a href="{% url 'delivery' %}">РАБОТАЕМ КРУГЛОСУТОЧНО</a>
+                    </div>
+
+                    <div class="icon-home">
+                        <span><img src="{% static 'main/img/icons/tradein.svg' %}"></span>
+
+                        <a href="{% url 'trade-in' %}">ПРОДАЁМ В ТРЕЙД-ИН</a>
+                    </div>
+                </div>
+            </div>
+            <div class="rightside-header">
+                <div class="container-header">
+                    <div class="element-header">
+                        <img src="{% static 'main/img/icons/geo.svg' %}" width="20px" height="auto">
+                        <a>КРАСНОДАР</a>
+                    </div>
+                    <div class="element-header">
+                        <button onclick="window.location.href='tel:+79667605550'">+7 966 760-55-50</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </header>
+    <main>
+        <section class="home-section" id="home">
+            <div class="body-container">
+                <div class="blocks-home">
+                    <div class="leftblock-home">
+                        <div class="home-text">
+
+                            <a href="{% url 'home' %}"><h1 id="name-company-home" class="mobile"><i>Авто<span style="color: #ff943d ">Ампер</span></i></h1></a>
+                            <h1 id="fast-delivery-text"><i>ДОСТАВКА АКБ ДЛЯ АВТО</i></h1>
+                        </div>
+                        <div class="icons-home mobile">
+                            <div class="icon-home">
+                                <span><img src="{% static 'main/img/icons/delivery.svg' %}"></span>
+
+                                <a href="{% url 'delivery' %}">СРЕДНЕЕ ВРЕМЯ ДОСТАВКИ</a>
+                            </div>
+                            <div class="icon-home">
+                                <span><img src="{% static 'main/img/icons/time.svg' %}"></span>
+                                <a href="{% url 'delivery' %}">РАБОТАЕМ КРУГЛОСУТОЧНО</a>
+                            </div>
+
+                            <div class="icon-home">
+                                <span><img src="{% static 'main/img/icons/tradein.svg' %}"></span>
+
+                                <a href="{% url 'trade-in' %}">ПРОДАЁМ В ТРЕЙД-ИН</a>
+                            </div>
+                        </div>
+
+                        <div class="find-acum">
+                            <h1><strong>Пришлите фото<br> старого аккумулятора</strong></h1>
+                            <div class="blocks-find-acum">
+                                <p>Пришлите фото старого аккумулятора или модель вашего авто. Мы подберём новую АКБ, доставим и установим</p>
+                            </div>
+                            <div class="social-networks">
+                                <a href="https://t.me/avtoamper23">
+                                    <div class="btn-sn">
+                                        <ion-icon name="paper-plane-outline"></ion-icon>
+                                    </div>
+                                </a>
+                                <a href="https://wa.me/79667605550">
+                                    <div class="btn-sn">
+                                        <ion-icon name="logo-whatsapp"></ion-icon>
+                                    </div>
+                                </a>
+
+                                <a href="tel:+79667605550">
+                                    <div class="btn-sn">
+                                        <ion-icon name="call-outline"></ion-icon>
+                                    </div>
+                                </a>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="rightblock-home" style="align-items : center; justify-content : center; margin-top : 400px; margin-right : 200px">
+                        <img src="{% static 'main/img/whyus2.png' %}">
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="products-section" id="products">
+            <div class="body-container">
+                {% include 'main/elements/category-block.html' with categories=categories %}
+                <div class="products">
+                    {% for product in products %}
+                        {% include 'main/elements/product.html' with product_item=product %}
+                    {% endfor %}
+                </div>
+                {% include 'main/elements/category-block.html' with categories=categories %}
+            </div>
+            {% for product in products %}
+                {% include 'main/elements/modal-window.html' with product=product %}
+            {% endfor %}
+
+        </section>
+
+        {% include 'main/elements/contact.html' %}
+    </main>
+    {% include 'main/elements/footer.html' %}
+{% endblock content %}

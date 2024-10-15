@@ -1,0 +1,24 @@
+﻿{% extends 'main/base.html' %}
+{% block title %}Спасибо за заявку{% endblock title %}
+{% block content %}
+    {% include 'main/elements/header_desktop.html' %}
+    <main>
+        {% include 'main/elements/header_mobile.html' %}
+        <section class="about-section" id="about">
+
+            <div class="body-container">
+
+                {% include 'main/elements/category-block.html' with categories=categories %}
+                <h1 class="header-404">Спасибо за заявку!</h1>
+                <form class="form-button form-404" action="{% url 'home' %}">
+                    <button class="button-404" id="button-thanks">На главную</button>
+                </form>
+                {% include 'main/elements/category-block.html' with categories=categories %}
+            </div>
+
+        </section>
+    </main>
+    {% include 'main/elements/footer.html' %}
+
+{% endblock content %}
+

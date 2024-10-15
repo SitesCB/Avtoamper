@@ -1,0 +1,64 @@
+{% load static %}
+<section class="contact-section" id="contacts">
+    <div class="body-container">
+        <div class="find-acum">
+            <h1>Не нашли нужный?</h1>
+            <div class="blocks-find-acum">
+                <p>
+                    У нас большой склад, скорее всего, мы просто не успели ещё добавить вашу АКБ на сайт.
+                    <br />
+
+                    Напишите нам и мы проверим её наличие
+                </p>
+            </div>
+            <div class="social-networks">
+                <a href="https://t.me/avtoamper23">
+                    <div class="btn-sn">
+                        <ion-icon name="paper-plane-outline"></ion-icon>
+                    </div>
+                </a>
+                <a href="https://wa.me/79667605550">
+                    <div class="btn-sn">
+                        <ion-icon name="logo-whatsapp"></ion-icon>
+                    </div>
+                </a>
+
+                <a href="tel:+79667605550">
+                    <div class="btn-sn">
+                        <ion-icon name="call-outline"></ion-icon>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+        <div class="header-contacts">
+            <h5 class="mini-header" style="width:auto">Контакты</h5>
+            <h1 class="big-header">Связаться с нами</h1>
+        </div>
+
+        <div class="blocks-contacts">
+            <div class="left-block-contacts">
+
+                <form method="POST" action="{% url 'thanks' %}">
+                    {% csrf_token %}
+                    <input name="name" type="text" id="name" required>
+                    <label for="name" id="name-label"><ion-icon name="person-outline"></ion-icon>Ваше имя</label>
+
+                    <input name="phone" type="text" id="phone" required>
+                    <label for="phone" id="phone-label"><ion-icon name="phone-portrait-outline"></ion-icon>Ваш телефон</label>
+
+                    <input name="car" type="text" id="socials" required>
+                    <label for="socials" id="social-label"><ion-icon name="car-outline"></ion-icon>Марка вашей машины</label>
+                    
+                    <input name="text" type="text" id="text" required blank>
+                    <label for="text" id="text-label"><ion-icon name="mail-outline"></ion-icon>Уточните проблему</label>
+                    <button>Отправить</button>
+                </form>
+            </div>
+            <div class="right-block-contacts">
+                <img src="{% static 'main/img/car-contact.png' %}" width="auto" height="100%" style="position:absolute">
+            </div>
+        </div>
+    </div>
+
+</section>

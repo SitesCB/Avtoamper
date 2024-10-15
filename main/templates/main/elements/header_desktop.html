@@ -1,0 +1,40 @@
+{% load static %}
+<header class="header">
+    <div class="body-container">
+        <div class="leftside-header">
+            <div class="home-text">
+
+                <a href="{% url 'home' %}"><h1 id="name-company-home"><i>Авто<span style="color: #ff943d ">Ампер</span></i></h1></a>
+            </div>
+            <div class="icons-home">
+                <div class="icon-home">
+                    <span><img src="{% static 'main/img/icons/delivery.svg' %}"></span>
+
+                    <a href="{% url 'delivery' %}">СРЕДНЕЕ ВРЕМЯ ДОСТАВКИ</a>
+                </div>
+                <div class="icon-home">
+                    <span><img src="{% static 'main/img/icons/time.svg' %}"></span>
+                    <a href="{% url 'delivery' %}">РАБОТАЕМ КРУГЛОСУТОЧНО</a>
+                </div>
+
+                <div class="icon-home">
+                    <span><img src="{% static 'main/img/icons/tradein.svg' %}"></span>
+
+                    <a href="{% url 'trade-in' %}">ПРОДАЁМ В ТРЕЙД-ИН</a>
+                </div>
+            </div>
+        </div>
+        <div class="rightside-header">
+            <div class="container-header">
+                <div class="element-header">
+                    <img src="{% static 'main/img/icons/geo.svg' %}" width="20px" height="auto">
+                    <a>КРАСНОДАР</a>
+                </div>
+                <div class="element-header">
+                    <button>+7 966 760-55-50</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</header>

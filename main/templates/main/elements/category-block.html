@@ -1,0 +1,7 @@
+<div class="categories-block">
+    {% for category in categories %}
+        <form class="category" action="{% url 'home' %}{{ category.slug }}">
+            <button>{{ category }}</button>
+        </form>
+    {% endfor %}
+</div>

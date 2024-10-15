@@ -1,0 +1,10 @@
+<div class="categories-block">
+    <form class="category active-category" action="{% url 'home' %}{{ category.slug }}">
+        <button>{{ context_upper.choose_category }}</button>
+    </form>
+    {% for under_category in context_upper.under_categories %}
+        <form class="category" action="categories/{{ under_category.slug }}/">
+            <button>{{ under_category }}</button>
+        </form>
+    {% endfor %}
+</div>
